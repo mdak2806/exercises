@@ -325,3 +325,100 @@ console.log(shoppingList);
  const newList = shoppingList.splice();
 
  console.log(newList);
+
+
+ // Creating an object
+
+ const newObject = {};
+
+ const newObj = new Object();
+
+//  Accessing values
+//  There are two ways to access the properties of an object:
+//  Dot notation - syntax: object.propertyName
+//  Square bracket notation - object["propertyName"]
+
+const movie = {
+  name: "Sam",
+  director: "Mo",
+  duration: 300
+};
+
+// Accessing below
+movie.name = "Sam";
+movie["name"] = "Sam";
+
+// Reassigining values
+movie.name = "New Name";
+movie["name"] = "New Name 2";
+
+
+// Adding new values
+movie.country = "Oz";
+movie["rating"] = "3 Stars";
+
+// Deleting properties
+
+delete movie.duration;
+
+console.log(movie);
+
+// Looping through objects
+
+const pet = {
+  name: "Spotty",
+  owner: "Mo",
+  age: 3
+};
+
+
+for (const key in pet){
+  console.log(key,  pet[key]);
+  if(pet[key].length > 3){
+    console.log("pet key letter length is high:", pet[key])
+  }
+}
+
+// getting the keys of an object
+const petKeys = Object.keys(pet);
+console.log("pet keys", petKeys);
+
+// getting the values of the object
+const petValues = Object.values(pet);
+console.log("pet values ", petValues);
+
+
+// Nested objects
+
+const student = {
+  name: "luke",
+  age: 120,
+  pet: "dan",
+  address: {
+    street: "Sydney rd",
+    suburb: "Redfern"
+  }
+};
+
+// Accessing nested objects
+student.address // => { Street: "Sydney", Suburb: "Redfern"}
+student.address.street // "Sydney rd"
+
+
+// This intro
+
+const explorer = {
+  firstName: "Jak",
+  lastName: "Cos",
+  displayFullName: function (){
+    const fullName = this.firstName + " " + this.lastName;
+    return fullName
+  },
+  talkTo: function(name){
+    const greeting = this.firstName + "says hi to " + name;
+    return greeting 
+  }
+};
+
+console.log(explorer.displayFullName()); // retunrs "Jak Cos"
+console.log(explorer.talkTo("me")); // returns Jak Says hi to me..
